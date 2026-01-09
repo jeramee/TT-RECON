@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ttrecon"
+version = "0.0.1"
+description = "TT-RECON: Truth-first targeted therapy recon pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=1.10",
+  "PyYAML>=6.0",
+  "Jinja2>=3.1",
+]
+
+[project.scripts]
+ttrecon = "ttrecon.cli:main"
