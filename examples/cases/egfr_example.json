@@ -1,1 +1,33 @@
-# placeholder
+{
+  "case_id": "CASE_EGFR_001",
+  "tumor_type": "NSCLC",
+  "specimen_type": "tissue",
+  "assay_type": "panel",
+  "alterations": [
+    {
+      "gene": "EGFR",
+      "type": "INDEL",
+      "exon": "exon19del",
+      "meta": {
+        "note": "classic sensitizing"
+      }
+    },
+    {
+      "gene": "EGFR",
+      "type": "SNV",
+      "protein_change": "T790M",
+      "meta": {
+        "note": "acquired resistance marker"
+      }
+    },
+    {
+      "gene": "MET",
+      "type": "CNV",
+      "cnv_call": "AMP",
+      "meta": {
+        "note": "bypass possibility"
+      }
+    }
+  ],
+  "notes": "Example only; not clinical."
+}

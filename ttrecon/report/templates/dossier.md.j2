@@ -1,0 +1,38 @@
+# TT-RECON Dossier
+
+**Run ID:** {{ report.run_id }}
+**Target:** {{ report.target }}
+**Case:** {{ report.case_id }}
+
+## Overview
+{{ report.overview }}
+
+## Ranked Claims
+{% for c in report.claims_ranked %}
+### {{ loop.index }}. {{ c.type }} — score={{ "%.2f"|format(c.score) }}, conf={{ "%.2f"|format(c.confidence) }}
+{{ c.statement }}
+
+- Claim ID: `{{ c.claim_id }}`
+- Evidence IDs: {% for e in c.evidence_ids %}`{{ e }}` {% endfor %}
+- Feature IDs: {% for f in c.feature_ids %}`{{ f }}` {% endfor %}
+- Tags: {% for t in c.tags %}`{{ t }}` {% endfor %}
+
+{% endfor %}
+
+## Evidence (v0.1: local case alterations)
+{% for e in evidence %}
+- `{{ e.evid_id }}` — {{ e.payload.get("gene") }} {{ e.payload.get("type") }}
+  - protein_change: {{ e.payload.get("protein_change") }}
+  - exon: {{ e.payload.get("exon") }}
+  - cnv_call: {{ e.payload.get("cnv_call") }}
+{% endfor %}
+
+## Features
+{% for f in features %}
+- `{{ f.feat_id }}` — {{ f.name }} = {{ f.value }} (evidence: {% for e in f.evidence_ids %}`{{ e }}` {% endfor %})
+{% endfor %}
+
+## Limitations
+{% for l in report.limitations %}
+- {{ l }}
+{% endfor %}

@@ -1,1 +1,1 @@
-# placeholder
+# EGFR target pack

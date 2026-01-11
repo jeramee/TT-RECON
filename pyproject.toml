@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ttrecon"
-version = "0.0.1"
+version = "0.0.5.post2"
 description = "TT-RECON: Truth-first targeted therapy recon pipeline"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,7 +12,11 @@ dependencies = [
   "pydantic>=1.10",
   "PyYAML>=6.0",
   "Jinja2>=3.1",
+  "requests>=2.31",
 ]
 
 [project.scripts]
 ttrecon = "ttrecon.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

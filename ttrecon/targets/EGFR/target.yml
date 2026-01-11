@@ -1,0 +1,13 @@
+name: EGFR
+description: "EGFR target pack: basic sensitizing + resistance + bypass heuristics"
+drug_classes:
+  - EGFR_TKI
+  - EGFR_TKI_LATE_GEN
+  - MET_INHIBITOR
+known_sensitizing:
+  - "EXON19DEL"
+  - "L858R"
+known_resistance:
+  - "T790M"
+bypass_markers:
+  - "MET_AMP"
