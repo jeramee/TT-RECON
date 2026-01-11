@@ -223,4 +223,4 @@ If you later add an LLM narrator:
 
 ## License
 
-TBD (add one). If you intend public release, pick a license early (MIT/Apache-2.0).
+MIT
